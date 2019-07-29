@@ -1,0 +1,19 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/tekom/htdocs;
+
+	open_file_cache max=10000 inactive=30s;
+    	open_file_cache_valid 2m;
+    	open_file_cache_min_uses 2;
+    	open_file_cache_errors on;
+
+
+	index index.php index.html index.htm index.nginx-debian.html;
+
+	server_name _;
+	include /etc/nginx/php72.conf;
+        include /etc/nginx/typo3.conf;
+
+}

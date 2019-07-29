@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo rm /etc/nginx
+sudo ln -s /etc/$1 /etc/nginx
+restartservers.sh
